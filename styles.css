@@ -1,0 +1,57 @@
+@import "reset.css";
+
+body {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.smart-tipper__header {
+   background-color: #0380b1;
+   color: white;
+   font-size: 28px;
+   padding: 10px 80px;
+   border-bottom: 1px solid black;
+}
+
+.smart-tipper__body {
+   padding: 10px 20px;
+}
+
+.radio-btns {
+   display: flex;
+   margin: 10px 0px;
+   border: 1px dashed black;
+   padding: 5px 15px;
+   justify-content: center;
+   align-items: center;
+}
+
+.radio-btn {
+   display: flex;
+}
+
+.radio-btn input {
+   margin-right: 10px;
+}
+
+.radio-btns__column {
+   display: flex;
+   flex-direction: column;
+}
+
+.radio-btns__column:first-child {
+   margin-right: 30px;
+}
+
+.dark-btn {
+   border: 1px dashed black;
+   display: flex;
+   padding: 5px 31px;
+   align-items: center;
+}
+
+.dark-btn input {
+   margin-right: 10px;
+}
