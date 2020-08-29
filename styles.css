@@ -7,8 +7,14 @@ body {
    align-items: center;
 }
 
+#smart-tipper {
+   border: 1px solid rgba(121, 118, 118, 0.705);
+   box-shadow: 3px 4px 6px rgba(50, 50, 93, 0.31),
+      0px 5px 23px rgba(0, 0, 0, 0.08);
+}
+
 .smart-tipper__header {
-   background-color: #0380b1;
+   background-color: #005cc8;
    color: white;
    font-size: 28px;
    padding: 10px 80px;
@@ -30,6 +36,7 @@ body {
 
 .radio-btn {
    display: flex;
+   padding: 5px;
 }
 
 .radio-btn input {
@@ -50,8 +57,60 @@ body {
    display: flex;
    padding: 5px 31px;
    align-items: center;
+   margin-bottom: 20px;
 }
 
-.dark-btn input {
+#darkModeBtn {
    margin-right: 10px;
+}
+
+.show-result {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+
+.show-result__row {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+}
+
+.show-result__text {
+   width: 60px;
+   font-size: 20px;
+   padding: 5px;
+   text-align: right;
+}
+
+.show-result__input {
+   display: flex;
+   align-items: center;
+}
+
+.show-result__input input {
+   border: none;
+   text-align: right;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+   font-size: 16px;
+}
+
+.show-result__input input:focus {
+   outline: none;
+}
+
+.tip-rate {
+   font-size: 20px;
+   padding-left: 15px;
+}
+
+.seek-bar input {
+   width: 100%;
+   padding: 5px 0px;
+}
+
+.seek-bar__mark {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }

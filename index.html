@@ -8,26 +8,72 @@
    </head>
    <body>
       <div id="smart-tipper">
-         <header class="smart-tipper__header">
-            Smart Tipper
-         </header>
+         <header class="smart-tipper__header">Smart Tipper</header>
          <main class="smart-tipper__body">
             <div class="radio-btns">
                <div class="radio-btns__column">
                   <div class="radio-btn">
-                     <input type="radio" value="NO TIP" />NO TIP
+                     <input id="noTipBtn" type="radio" name="tip-type" />
+                     <label for="noTipBtn">NO TIP</label>
                   </div>
-                  <div class="radio-btn"><input type="radio" />TIP by %</div>
+                  <div class="radio-btn">
+                     <input
+                        id="percentTipBtn"
+                        type="radio"
+                        name="tip-type"
+                        checked
+                     />
+                     <label for="percentTipBtn">TIP by %</label>
+                  </div>
                </div>
                <div class="radio-btns__column">
                   <div class="radio-btn">
-                     <input type="radio" value="NO TIP" />RAND TIP
+                     <input id="randTipBtn" type="radio" name="tip-type" />
+                     <label for="randTipBtn">RAND TIP</label>
                   </div>
-                  <div class="radio-btn"><input type="radio" />MAX TIP</div>
+                  <div class="radio-btn">
+                     <input id="maxTipBtn" type="radio" name="tip-type" />
+                     <label for="maxTipBtn">MAX TIP</label>
+                  </div>
                </div>
             </div>
-            <div class="dark-btn"><input type="checkbox" />Dark Mode</div>
+            <div class="dark-btn">
+               <input id="darkModeBtn" type="checkbox" />
+               <label for="darkModeBtn">Dark Mode</label>
+            </div>
+            <div class="show-result">
+               <div class="show-result__row">
+                  <span class="show-result__text">Sales</span>
+                  <div class="show-result__input">
+                     <input type="text" />
+                     <span class="dollar-mark">$</span>
+                  </div>
+               </div>
+               <div class="show-result__row">
+                  <span class="show-result__text">Tip</span>
+                  <div class="show-result__input">
+                     <input type="text" />
+                     <span class="dollar-mark">$</span>
+                  </div>
+               </div>
+               <div class="show-result__row">
+                  <span class="show-result__text">Total</span>
+                  <div class="show-result__input">
+                     <input type="text" />
+                     <span class="dollar-mark">$</span>
+                  </div>
+               </div>
+            </div>
+            <div class="seek-bar">
+               <div class="tip-rate">Rate: 15%</div>
+               <input class="rate-bar" type="range" max="30" min="0" />
+               <div class="seek-bar__mark">
+                  <div class="seek-bar__mark-start">0%</div>
+                  <div class="seek-bar__mark-end">30%</div>
+               </div>
+            </div>
          </main>
       </div>
+      <script src="app.js"></script>
    </body>
 </html>
