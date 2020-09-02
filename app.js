@@ -45,12 +45,36 @@ function isDark() {
 
 function calculateTip() {
    let sales = inputNum[0].value;
+   let tip = (sales * rateBar.value) / 100;
+   let total = (Number(sales) + Number(tip)).toFixed(2);
+
    if (percentTipBtn.checked === true) {
-      inputNum[1].value = (sales * rateBar.value) / 100;
-      inputNum[2].value = Number(sales) + Number(inputNum[1].value);
+      rateBar.disabled = false;
+      inputNum[1].value = tip;
+      inputNum[2].value = total;
    } else if (noTipBtn.checked === true) {
       inputNum[1].value = 0;
       inputNum[2].value = sales;
+      rateText.innerText = `Rate: 0%`;
+      rateBar.value = 0;
+      rateBar.disabled = true;
+   } else if (randTipBtn.checked === true) {
+      let randNum = Math.floor(Math.random() * 31);
+      rateBar.disabled = false;
+      rateBar.value = randNum;
+      rateText.innerText = `Rate: ${rateBar.value}%`;
+      tip = (sales * rateBar.value) / 100;
+      total = Number(sales) + Number(tip);
+      inputNum[1].value = tip;
+      inputNum[2].value = total;
+   } else {
+      rateBar.value = 30;
+      rateBar.disabled = true;
+      rateText.innerText = `Rate: 30%`;
+      tip = (sales * 30) / 100;
+      total = Number(sales) + Number(tip);
+      inputNum[1].value = tip;
+      inputNum[2].value = total;
    }
 }
 
@@ -65,10 +89,10 @@ function init() {
    inputNum.forEach(function (element) {
       element.addEventListener("input", calculateTip);
    });
-   noTipBtn.addEventListener("click", calculateTip);
+   noTipBtn.addEventListener("input", calculateTip);
    randTipBtn.addEventListener("click", calculateTip);
-   percentTipBtn.addEventListener("click", calculateTip);
-   maxTipBtn.addEventListener("click", calculateTip);
+   percentTipBtn.addEventListener("input", calculateTip);
+   maxTipBtn.addEventListener("input", calculateTip);
    rateBar.addEventListener("input", rateBarHandler);
 }
 
